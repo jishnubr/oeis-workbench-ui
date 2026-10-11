@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+/* 
+  TAILWIND V4 THEME OVERRIDES 
+  Remaps all `neutral-*` classes to the Cobalt Slate palette.
+  This instantly transforms the entire app without touching React components.
+*/
+@theme {
+  --color-neutral-50:  var(--color-slate-50);
+  --color-neutral-100: var(--color-slate-100);
+  --color-neutral-200: var(--color-slate-200);
+  --color-neutral-300: var(--color-slate-300);
+  --color-neutral-400: var(--color-slate-400);
+  --color-neutral-500: var(--color-slate-500);
+  --color-neutral-600: var(--color-slate-600);
+  --color-neutral-700: var(--color-slate-700);
+  --color-neutral-800: var(--color-slate-800);
+  --color-neutral-900: var(--color-slate-900);
+  --color-neutral-950: #0f172a; /* Deep Slate 950 */
+
+  /* Sky pops more legibly than default blue against deep slate backgrounds */
+  --color-blue-600: var(--color-sky-600);
+  --color-indigo-600: var(--color-indigo-500);
+}
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+  --font-serif: 'Lora', 'Georgia', 'Cambria', serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-950);
+  color: var(--color-neutral-100);
+}
+
+/* ─── Scrollbars — sleeker, thinner, slate-toned ─────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-700);
+  border-radius: 4px;
+  border: 2px solid var(--color-neutral-950);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-500);
+}
+
+/* ─── Monospace Code Editor Font ─────────────────────────────────────────── */
+.font-editor {
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* ─── Serif Typography (kept for any remaining usage) ────────────────────── */
+.font-academic {
+  font-family: var(--font-serif);
+}
+
+/* ─── OEIS Retro Preview Styles ──────────────────────────────────────────── */
+.oeis-retro {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.oeis-retro pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95em;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.oeis-retro-header {
+  background-color: #000066; /* Classic OEIS Navy */
+  color: #ffffff;
+  padding: 6px 10px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border-radius: 2px 2px 0 0;
+}
+
+.oeis-retro-container {
+  background-color: #F8F9FA;
+  border: 1px solid #DEE2E6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
